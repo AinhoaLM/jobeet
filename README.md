@@ -1,5 +1,5 @@
 <div align="center">
-<h1>Comenzando con Symfonu</h1>
+<h1>Comenzando con Symfony</h1>
 <p></p>
 </div>
 <div>
