@@ -62,7 +62,7 @@ JobeetJob:
     email:          job@example.com
 
 # Starts at the beginning of the line (no whitespace before)
-<?php for ($i = 100; $i <= 130; $i++): ?>
+<?php for ($i = 100; $i <= 230; $i++): ?>
   job_<?php echo $i ?>:
     JobeetCategory: programming
     company:      Company <?php echo $i."\n" ?>
