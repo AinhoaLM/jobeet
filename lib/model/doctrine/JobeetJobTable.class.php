@@ -17,7 +17,7 @@ class JobeetJobTable extends Doctrine_Table
     {
       return $this->addActiveJobsQuery($q)->count();
     }
-    
+
   public function addActiveJobsQuery(Doctrine_Query $q = null)
   {
     if (is_null($q))
@@ -31,6 +31,19 @@ class JobeetJobTable extends Doctrine_Table
     $q->andWhere($alias . '.expires_at > ?', date('Y-m-d h:i:s', time()))
       ->addOrderBy($alias . '.expires_at DESC');
 
+    $q->andWhere($alias . '.is_activated = ?', 1);
+
     return $q;
+  }
+
+  static public $types = array(
+    'full-time' => 'Full time',
+    'part-time' => 'Part time',
+    'freelance' => 'Freelance',
+  );
+
+  public function getTypes()
+  {
+    return self::$types;
   }
 }
